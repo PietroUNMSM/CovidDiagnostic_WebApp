@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-ES">
+    <head>
+        <meta charset="UTF-8">
+        <title>Fuzzy Logic System for Covid Diagnostique</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="icon" type="image/png" href="Imagenes/HomeAI_logo.png">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+<body>
+    <header class="site-header">
+        <div class="site-identity">
+            <a href="/"><img src="Imagenes/logo helping others dedos v2.png" alt="Logo HomeAI" /></a>
+            <h1><a href="/">Diagnosticador de COVID-19</a></h1>
+        </div>  
+        <!-- <div class="cloud-logo">
+            <a class = "cabe-direita" href="https://dataplatform.cloud.ibm.com/home2?context=cpdaas"><img src="/IBM_Cloud.png" alt="Logo IBM Cloud"/></a>
+            <h1><a class = "cabe-direita" href="https://dataplatform.cloud.ibm.com/ml-runtime/deployments/6b386324-c218-44c8-a26a-44771f0c687e/test?space_id=497efa9d-bc30-4b16-ae1b-1b5b027dc863&context=cpdaas&flush=true">DEMO v1</a></h1>
+        </div> -->
+    </header>
+    <section class="formulario2">
+        <div class="container" id="formulario">
+          <div class="title">
+            <a href="/">&lt;  Reintentar diagnóstico</a>
+          </div>
+
+          <div class='conteudo'>
+                <br>                
+                <!-- <div>
+                    <h1 class='resultado'>La probabilidad que Ud. <span class="valor_estado"> {{rpta}}</span> 
+                        padezca de un Accidente Cerebrovascular es 
+                        <span class="valor_estado"> {{dados_form}}%</span></h1>      
+                      
+                </div> -->
+                <div>
+                    <h1 class='resultado'>Los resultados para saber si Ud. <!--span class="valor_estado"> {{rpta}}</span--> 
+                        está infectado de COVID-19 son:
+                        <br> El grado de pertenencia en Caso Negativo es <b>{{casoNega}} </b>
+                        <br> El grado de pertenencia en Caso de Cuarentena es <b>{{casoCuarent}}</b>
+                        <br> El grado de pertenencia en Caso Positivo es <b> {{casoPosi}} </b><br>
+                        <br>
+                    <!--span class="valor_estado"> {{dados_form}}%</span--></h1> 
+                </div>
+                <div>
+                    <h1 class="resultado">
+                        Sus entradas por cada síntoma fueron:
+                        <br>Temperatura corporal: {{inFiebre}} °C <br>
+                        Edad: {{inEdad}} <br> Nivel de glucosa en sangre: {{inDiabetes}} mg/dl <br>
+                        Contacto con un infectado: {{inHist}}/1 <br>
+                        Dolor de garganta: {{inGarganta}}/1 <br> Tos: {{inTos}}/1 <br>
+                        Pérdida del olfato y/o gusto: {{inPerdida}}/1 <br>
+                        Problemas respiratorios: {{inRespira}}/1 <br>
+                        Dolor en el pecho: {{inPecho}}/10 <br>
+
+                        <br><br><br>
+                        Membresias de las variables de entrada: <br>
+                        Pertenencia de fiebre baja: <b> {{memb_Fiebre_lo}} </b><br>
+                        Pertenencia de fiebre media: <b> {{memb_fiebre_md}} </b><br>
+                        Pertenencia de fiebre alta: <b> {{memb_fiebre_hi}} </b><br>
+                        <br>
+                        Pertenencia de fedad menor a 40: {{memb_edad_men40}}<br>
+                        Pertenencia de edad entre 40 y 50: {{memb_edad_40_50}}<br>
+                        Pertenencia de edad mayor a 50: {{memb_edad_ma50}}<br>
+                        <br>
+                        Pertenencia de diabetes bajo: {{memb_diabetes_low}}<br>
+                        Pertenencia de diabetes medio: {{memb_diabetes_md}}<br>
+                        Pertenencia de diabetes alto: {{memb_diabetes_hi}}<br>
+                        <br>
+                        Pertenencia de viajero no infectado: {{memb_histViaje_low}}<br>
+                        Pertenencia de viajero moderado: {{memb_histViaje_md}}<br>
+                        Pertenencia de viajero infectado: {{memb_histViaje_hi}}<br>
+                        <br>
+                        Pertenencia de dolor bajo de garganta: {{memb_garganta_low}}<br>
+                        Pertenencia de dolor medio de garganta: {{memb_garganta_md}}<br>
+                        Pertenencia de dolor alto de garganta: {{memb_garganta_hi}}<br>
+                        <br>
+                        Pertenencia de tos bajo: {{memb_tos_low}}<br>
+                        Pertenencia de tos medio: {{memb_tos_md}}<br>
+                        Pertenencia de tos alto: {{memb_tos_hi}}<br>
+                        <br>
+                        Pertenencia de perdida de olfato y gusto bajo: {{memb_olfatoGusto_low}}<br>
+                        Pertenencia de perdida de olfato y gusto medio: {{memb_olfatoGusto_md}}<br>
+                        Pertenencia de perdida de olfato y gusto alto: {{memb_olfatoGusto_hi}}<br>
+                        <br>
+                        Pertenencia de problema respiratorio bajo: {{memb_respira_low}}<br>
+                        Pertenencia de problema respiratorio medio: {{memb_respira_md}}<br>
+                        Pertenencia de problema respiratorio alto: {{memb_respira_hi}}<br>
+                        <br>
+                        Pertenencia de dolor en el pecho bajo: {{memb_pecho_low}}<br>
+                        Pertenencia de dolor en el pecho medio: {{memb_pecho_md}}<br>
+                        Pertenencia de dolor en el pecho alto: {{memb_pecho_hi}}<br>
+                        <br> 
+                    </h1>
+                </div>
+                <!-- REGLAS -->
+                <div class="responsive">
+                    <div class="gallery">
+                        <a target="_blank" href="Imagenes/RuleBase/plotRegla1.png">
+                            <img src="Imagenes/RuleBase/plotRegla1.png" alt="Regla 1" width="500" height="300">
+                            </a>
+                            <div class="desc">Regla 1</div>
+                    </div>
+                </div>
+                <br>
+                <div class="responsive">
+                    <div class="gallery">
+                        <a target="_blank" href="Imagenes/RuleBase/plotRegla2.png">
+                            <img src="Imagenes/RuleBase/plotRegla2.png" alt="Regla 2" width="500" height="300">
+                            </a>
+                            <div class="desc">Regla 2</div>
+                    </div>
+                </div>
+                <br>
+                <div class="responsive">
+                    <div class="gallery">
+                        <a target="_blank" href="Imagenes/RuleBase/plotRegla3.png">
+                            <img src="Imagenes/RuleBase/plotRegla3.png" alt="Regla 3" width="500" height="300">
+                            </a>
+                            <div class="desc">Regla 3</div>
+                    </div>
+                </div>
+                <br>
+                <div class="responsive">
+                    <div class="gallery">
+                        <a target="_blank" href="Imagenes/RuleBase/plotRegla4.png">
+                            <img src="Imagenes/RuleBase/plotRegla4.png" alt="Regla 4" width="500" height="300">
+                            </a>
+                            <div class="desc">Regla 4</div>
+                    </div>
+                </div>
+                <br>
+                <div class="responsive">
+                    <div class="gallery">
+                        <a target="_blank" href="Imagenes/RuleBase/plotRegla5.png">
+                            <img src="Imagenes/RuleBase/plotRegla5.png" alt="Regla 5" width="500" height="300">
+                            </a>
+                            <div class="desc">Regla 5</div>
+                    </div>
+                </div>
+                <br>
+                <div class="responsive">
+                    <div class="gallery">
+                        <a target="_blank" href="Imagenes/RuleBase/plotRegla6.png">
+                            <img src="Imagenes/RuleBase/plotRegla6.png" alt="Regla 6" width="500" height="300">
+                            </a>
+                            <div class="desc">Regla 6</div>
+                    </div>
+                </div>
+                <br>
+                <div class="responsive">
+                    <div class="gallery">
+                        <a target="_blank" href="Imagenes/RuleBase/plotRegla7.png">
+                            <img src="Imagenes/RuleBase/plotRegla7.png" alt="Regla 7" width="500" height="300">
+                            </a>
+                            <div class="desc">Regla 7</div>
+                    </div>
+                </div>
+                <br>
+                <div class="responsive">
+                    <div class="gallery">
+                        <a target="_blank" href="Imagenes/RuleBase/plotRegla8.png">
+                            <img src="Imagenes/RuleBase/plotRegla8.png" alt="Regla 8" width="500" height="300">
+                            </a>
+                            <div class="desc">Regla 8</div>
+                    </div>
+                </div>
+                <br>
+                <div class="responsive">
+                    <div class="gallery">
+                        <a target="_blank" href="Imagenes/RuleBase/plotRegla9.png">
+                            <img src="Imagenes/RuleBase/plotRegla9.png" alt="Regla 9" width="500" height="300">
+                            </a>
+                            <div class="desc">Regla 9</div>
+                    </div>
+                </div>
+                <br>
+                <div class="responsive">
+                    <div class="gallery">
+                        <a target="_blank" href="Imagenes/RuleBase/plotRegla10.png">
+                            <img src="Imagenes/RuleBase/plotRegla10.png" alt="Regla 10" width="500" height="300">
+                            </a>
+                            <div class="desc">Regla 10</div>
+                    </div>
+                </div>
+                <br>
+                <div class="responsive">
+                    <div class="gallery">
+                        <a target="_blank" href="Imagenes/RuleBase/plotRegla11.png">
+                            <img src="Imagenes/RuleBase/plotRegla11.png" alt="Regla 11" width="500" height="300">
+                            </a>
+                            <div class="desc">Regla 11</div>
+                    </div>
+                </div>
+                <br>
+                <div class="responsive">
+                    <div class="gallery">
+                        <a target="_blank" href="Imagenes/RuleBase/plotRegla12.png">
+                            <img src="Imagenes/RuleBase/plotRegla12.png" alt="Regla 12" width="500" height="300">
+                            </a>
+                            <div class="desc">Regla 12</div>
+                    </div>
+                </div>
+                <br>
+                <div class="responsive">
+                    <div class="gallery">
+                        <a target="_blank" href="Imagenes/RuleBase/plotRegla13.png">
+                            <img src="Imagenes/RuleBase/plotRegla13.png" alt="Regla 13" width="500" height="300">
+                            </a>
+                            <div class="desc">Regla 13</div>
+                    </div>
+                </div>
+                <br>
+                <div class="responsive">
+                    <div class="gallery">
+                        <a target="_blank" href="Imagenes/RuleBase/plotRegla14.png">
+                            <img src="Imagenes/RuleBase/plotRegla14.png" alt="Regla 14" width="500" height="300">
+                            </a>
+                            <div class="desc">Regla 14</div>
+                    </div>
+                </div>
+                <br>
+                <div class="responsive">
+                    <div class="gallery">
+                        <a target="_blank" href="Imagenes/RuleBase/plotRegla15.png">
+                            <img src="Imagenes/RuleBase/plotRegla15.png" alt="Regla 15" width="500" height="300">
+                            </a>
+                            <div class="desc">Regla 15</div>
+                    </div>
+                </div>
+                <br>
+                <div class="responsive">
+                    <div class="gallery">
+                        <a target="_blank" href="Imagenes/RuleBase/plotRegla16.png">
+                            <img src="Imagenes/RuleBase/plotRegla16.png" alt="Regla 16" width="500" height="300">
+                            </a>
+                            <div class="desc">Regla 16</div>
+                    </div>
+                </div>
+                <br>
+                <div class="responsive">
+                    <div class="gallery">
+                        <a target="_blank" href="Imagenes/RuleBase/plotRegla17.png">
+                            <img src="Imagenes/RuleBase/plotRegla17.png" alt="Regla 17" width="500" height="300">
+                            </a>
+                            <div class="desc">Regla 17</div>
+                    </div>
+                </div>
+
+                <div class="responsive">
+                    <div class="gallery">
+                        <h4>Conclusión de la defuzzificacion</h4>
+                        <a target="_blank" href="Imagenes/Conclusion/plotDefuzzy.png">
+                            <img src="Imagenes/Conclusion/plotDefuzzy.png" alt="Regla 17" width="500" height="300">
+                            </a>
+                            <div class="desc">
+                                Eje x del centroide: {{concluX}}<br>
+                                Eje y del centroide: {{concluY}} <br>
+                            </div>
+                    </div>
+                </div>
+
+                <br>
+          </div>
+        </div>
+    </section>
+
+    
+        
+    
+
+    </body>
+    
+ 
+</body>
+</html>
