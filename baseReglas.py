@@ -18,6 +18,7 @@ def regla1(memb_fiebre_lo, memb_edad_men40, conclu_negativa):
     # plt.axis([5,25,0,1])
     # plt.show()
     plt.savefig('templates/Imagenes/RuleBase/plotRegla1.png', bbox_inches='tight',dpi=100)
+    plt.close()
     return conclu_activation_neg1
 
 # regla1()
@@ -40,6 +41,7 @@ def regla2(memb_fiebre_md, memb_edad_ma50, conclu_cuarentena):
     # plt.axis([5,25,0,1])
     # plt.show()
     plt.savefig('templates/Imagenes/RuleBase/plotRegla2.png', bbox_inches='tight',dpi=100)
+    plt.close()
     return conclu_activation_cua1
 
 # regla2()
@@ -60,6 +62,7 @@ def regla3(memb_fiebre_hi, memb_edad_ma50, memb_histViaje_md, conclu_cuarentena)
     # plt.axis([5,25,0,1])
     # plt.show()
     plt.savefig('templates/Imagenes/RuleBase/plotRegla3.png', bbox_inches='tight',dpi=100)
+    plt.close()
     return conclu_activation_cua2
 
 # regla3()   
@@ -80,6 +83,7 @@ def regla4(memb_fiebre_hi, memb_edad_ma50, memb_histViaje_hi, conclu_positivo):
     # plt.axis([5,25,0,1])
     # plt.show()
     plt.savefig('templates/Imagenes/RuleBase/plotRegla4.png', bbox_inches='tight',dpi=100)
+    plt.close()
     return conclu_activation_posi1
 
 
@@ -99,6 +103,7 @@ def regla5(memb_garganta_low, memb_edad_men40, memb_histViaje_md, conclu_cuarent
     # plt.axis([5,25,0,1])
     # plt.show()
     plt.savefig('templates/Imagenes/RuleBase/plotRegla5.png', bbox_inches='tight',dpi=100)
+    plt.close()
     return conclu_activation_cua3
 
 
@@ -118,6 +123,7 @@ def regla6(memb_garganta_hi, memb_edad_40_50, memb_edad_ma50, memb_tos_md, concl
     # plt.axis([5,25,0,1])
     # plt.show()
     plt.savefig('templates/Imagenes/RuleBase/plotRegla6.png', bbox_inches='tight',dpi=100)
+    plt.close()
     return conclu_activation_cua4
 
 
@@ -137,6 +143,7 @@ def regla7(memb_respira_low, memb_edad_40_50, memb_edad_ma50, memb_tos_md, concl
     # plt.axis([5,25,0,1])
     # plt.show()
     plt.savefig('templates/Imagenes/RuleBase/plotRegla7.png', bbox_inches='tight',dpi=100)
+    plt.close()
     return conclu_activation_neg2
 
 
@@ -156,6 +163,7 @@ def regla8(memb_respira_hi, memb_edad_40_50, memb_edad_ma50, memb_tos_hi, conclu
     # plt.axis([5,25,0,1])
     # plt.show()
     plt.savefig('templates/Imagenes/RuleBase/plotRegla8.png', bbox_inches='tight',dpi=100)
+    plt.close()
     return conclu_activation_posi2
 
 
@@ -174,6 +182,7 @@ def regla9(memb_respira_low, memb_edad_40_50, memb_edad_ma50, conclu_negativa):
     # plt.axis([5,25,0,1])
     # plt.show()
     plt.savefig('templates/Imagenes/RuleBase/plotRegla9.png', bbox_inches='tight',dpi=100)
+    plt.close()
     return conclu_activation_neg3
 
 
@@ -193,6 +202,7 @@ def regla10(memb_edad_men40, memb_histViaje_hi, memb_respira_hi, conclu_positivo
     # plt.axis([5,25,0,1])
     # plt.show()
     plt.savefig('templates/Imagenes/RuleBase/plotRegla10.png', bbox_inches='tight',dpi=100)
+    plt.close()
     return conclu_activation_posi3
 
 
@@ -211,6 +221,7 @@ def regla11(memb_edad_ma50, memb_histViaje_hi, memb_respira_hi, conclu_positivo)
     # plt.axis([5,25,0,1])
     # plt.show()
     plt.savefig('templates/Imagenes/RuleBase/plotRegla11.png', bbox_inches='tight',dpi=100)
+    plt.close()
     return conclu_activation_posi4
 
 
@@ -230,6 +241,7 @@ def regla12(memb_edad_40_50, memb_edad_ma50, memb_histViaje_hi, memb_tos_hi, mem
     # plt.axis([5,25,0,1])
     # plt.show()
     plt.savefig('templates/Imagenes/RuleBase/plotRegla12.png', bbox_inches='tight',dpi=100)
+    plt.close()
     return conclu_activation_posi5
 
 
@@ -254,6 +266,7 @@ def regla13(memb_edad_40_50, memb_edad_ma50, memb_diabetes_hi, memb_histViaje_md
     # plt.axis([5,25,0,1])
     # plt.show()
     plt.savefig('templates/Imagenes/RuleBase/plotRegla13.png', bbox_inches='tight',dpi=100)
+    plt.close()
     return conclu_activation_posi6
 
 
@@ -276,6 +289,7 @@ def regla14(memb_edad_40_50, memb_edad_ma50, memb_diabetes_hi, memb_histViaje_md
     # plt.axis([5,25,0,1])
     # plt.show()
     plt.savefig('templates/Imagenes/RuleBase/plotRegla14.png', bbox_inches='tight',dpi=100)
+    plt.close()
     return conclu_activation_posi7
 
 
@@ -294,6 +308,7 @@ def regla15(memb_olfatoGusto_hi, memb_pecho_hi, conclu_positivo):
     # plt.axis([5,25,0,1])
     # plt.show()
     plt.savefig('templates/Imagenes/RuleBase/plotRegla15.png', bbox_inches='tight',dpi=100)
+    plt.close()
     return conclu_activation_posi8
 
 
@@ -315,6 +330,7 @@ def regla16(memb_histViaje_md, memb_garganta_hi, memb_tos_hi, memb_pecho_hi, con
     # plt.axis([5,25,0,1])
     # plt.show()
     plt.savefig('templates/Imagenes/RuleBase/plotRegla16.png', bbox_inches='tight',dpi=100)
+    plt.close()
     return conclu_activation_posi9
 
 
@@ -333,6 +349,7 @@ def regla17(memb_edad_men40, memb_histViaje_low, memb_garganta_low, conclu_negat
     # plt.axis([5,25,0,1])
     # plt.show()
     plt.savefig('templates/Imagenes/RuleBase/plotRegla17.png', bbox_inches='tight',dpi=100)
+    plt.close()
     return conclu_activation_neg4
 
 
