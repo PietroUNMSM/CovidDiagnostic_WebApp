@@ -11,102 +11,57 @@
         <script src="script.js"> </script>
     </head>
 <body>
-    <header class="site-header">
-        <div class="site-identity">
-            <a href="/"><img src="Imagenes/logo helping others dedos v2.png" alt="Logo HomeAI" /></a>
-            <!-- <h1><a href="/index.html">Diagnosticador de COVID-19</a></h1> -->
+    <header class="header">
+        <div class="logo">
+            <a href="/"><img src="Imagenes/icon.png" alt="Logo HomeAI" /></a>
+            <div class="brand">
+                <a href="/index.html">Diagnosticador de COVID-19</a>
+                <a href="" class="menu"><img src="Imagenes/menu.png" alt=""></a>
+            </div>
         </div>
-        <!-- <div class="cloud-logo">
-            <a class = "cabe-direita" href="https://dataplatform.cloud.ibm.com/home2?context=cpdaas"><img src="/IBM_Cloud.png" alt="Logo IBM Cloud"/></a>
-            <h1><a class = "cabe-direita" href="https://dataplatform.cloud.ibm.com/ml-runtime/deployments/6b386324-c218-44c8-a26a-44771f0c687e/test?space_id=497efa9d-bc30-4b16-ae1b-1b5b027dc863&context=cpdaas&flush=true">DEMO v1</a></h1>
-        </div-->
-
-        <div class="navbar navbar-expand-md navbar-dark bg-dark mb-4" role="navigation">
-            <a class="navbar-brand" href="/index.html">Diagnosticador de COVID-19</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mr-auto">
+        <div class="nav">
+                <ul class="">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        <a class="" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/funcmemb.html" >Funciones de Membresia</a>
+                        <a class="" href="/funcmemb.html" >Funciones de Membresia</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="http://fontenele.github.io/bootstrap-navbar-dropdowns/" target="_blank">Github</a>
+                        <a class="" href="http://fontenele.github.io/bootstrap-navbar-dropdowns/" target="_blank">Github</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                    </li> -->
-                    <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown1</a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdown1">
-                            <li class="dropdown-item" href="#"><a>Action 1</a></li>
-                            <li class="dropdown-item dropdown">
-                                <a class="dropdown-toggle" id="dropdown1-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown1.1</a>
-                                <ul class="dropdown-menu" aria-labelledby="dropdown1-1">
-                                    <li class="dropdown-item" href="#"><a>Action 1.1</a></li>
-                                    <li class="dropdown-item dropdown">
-                                        <a class="dropdown-toggle" id="dropdown1-1-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown1.1.1</a>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdown1-1-1">
-                                            <li class="dropdown-item" href="#"><a>Action 1.1.1</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li> -->
-
                 </ul>
-                <!-- <form class="form-inline mt-2 mt-md-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form> -->
-            </div>
         </div>
-
-
-
     </header>
-    <section class="formulario">
-        <div class="container" id="formulario">
-            <div class="title">
-                Diagnostique si puede padecer de COVID-19
-            </div>
-            
-            <div class="conteudo" id="conteudo">
+    <main class="main">
+        <section class="formulario">
+            <h3>Para diagnosticar si puede padecer COVID-19 llene el siguiente formulario:</h3>
+            <div class="container" id="formulario">
                 <form class='form_master' id='form_master' action='/resultado' method='POST'>
-                    <div class="user-detalhes">
+                    <div class="user-detalles">
                         <!--Fiebre-->
                         <div class="input-box">
                             <span class="detalhes">¿Cuál es su Temperatura Corporal?</span>
                             <input type="number" step="0.01" pattern="[0-9]+([,\.][0-9]+)?" formnovalidate  name="fiebre" required>
                         </div>
-                        
-
                         <!--Edad-->
                         <div class="input-box">
                             <span class="detalhes">¿Cuál es su edad?</span>
                             <input type="number" name="age" required>
                             
                         </div>
-
                         <!--Diabetes-->
                         <div class="input-box">
                             <span class="detalhes">¿Cuál es su Nivel de Glucosa en la sangre (mg/dl)?</span>
                             <input type="number" step="0.01" pattern="[0-9]+([,\.][0-9]+)?" formnovalidate  name="diabetes" required>
-                            
                         </div>
-
                         <!--Historial de viaje-->
                         <div class="input-box">
-                        
-                            <div class="tooltip">¿Ha tenido contacto con algún contagiado de COVID-19?
-                                <span class="tooltiptext"> Valore este síntoma en un rango del 0 al 1 </br> 0 si no lo padece </br> 1 si lo padece</span>
+                            <div class="tooltip">
+                                ¿Ha tenido contacto con algún contagiado de COVID-19?
+                                <img class="help" src="Imagenes/help.png" alt="">
+                                <span class="tooltiptext"> Valor de este síntoma en un rango del 0 al 1 </br> 0 si no ha tenido contacto </br> 1 si alguna ha tenido contacto</span>
                             </div>
-                                
                             <div class="slidecontainer">
                                 <input type="range" min="0.00" max="1.00" step="0.01" value="0.00" class="slider" id="rangeHist" name="nameHist">
                                 <p>Input: <span id="inputHist"></span></p>
@@ -122,22 +77,17 @@
                                 }
                             </script>
                         </div>
-
-                        
                         <!--Dolor de garganta-->
                         <div class="input-box">
-                            
-
-                                <div class="tooltip">¿Presenta dolor de garganta?
-                                    <span class="tooltiptext"> Valore este síntoma en un rango del 0 al 1 </br> 0 si no lo padece </br> 1 si lo padece</span>
-                                </div>
-        
-
+                            <div class="tooltip">
+                                ¿Presenta dolor de garganta?
+                                <img class="help" src="Imagenes/help.png" alt="">
+                                <span class="tooltiptext"> Valore este síntoma en un rango del 0 al 1 </br> 0 si no lo padece </br> 1 si lo padece</span>
+                            </div>
                             <div class="slidecontainer">
                                 <input type="range" min="0.0" max="1.00" value="0.00" step="0.01" class="slider" id="rangeGarganta" name="nameGarganta">
                                 <p>Input: <span id="inputGarganta"></span></p>
                             </div>
-
                             <script>
                                 var sliderGarganta = document.getElementById("rangeGarganta");
                                 var outputGarganta = document.getElementById("inputGarganta");
@@ -152,7 +102,9 @@
                         <!--tos-->
                         <div class="input-box">
         
-                                <div class="tooltip">¿Presenta tos?
+                                <div class="tooltip">
+                                    ¿Presenta tos?
+                                    <img class="help" src="Imagenes/help.png" alt="">
                                     <span class="tooltiptext"> Valore este síntoma en un rango del 0 al 1 </br> 0 si no lo padece </br> 1 si lo padece</span>
                                 </div>
     
@@ -177,7 +129,9 @@
                         <!--Perdida de olfato y gusto-->
                         <div class="input-box">
                             
-                                <div class="tooltip">¿Ha perdido el sentido del olfato y el gusto?
+                                <div class="tooltip">
+                                    ¿Ha perdido el sentido del olfato y el gusto?
+                                    <img class="help" src="Imagenes/help.png" alt="">
                                     <span class="tooltiptext"> Valore este síntoma en un rango del 0 al 1 </br> 0 si no lo padece </br> 1 si lo padece</span>
                                 </div>
                             
@@ -201,7 +155,9 @@
                         <!--Problema respiratorio-->
                         <div class="input-box">
                             
-                                <div class="tooltip">¿Presenta problemas respiratorios?
+                                <div class="tooltip">
+                                    ¿Presenta problemas respiratorios?
+                                    <img class="help" src="Imagenes/help.png" alt="">
                                     <span class="tooltiptext"> Valore este síntoma en un rango del 0 al 1 </br> 0 si no lo padece </br> 1 si lo padece</span>
                                 </div>
 
@@ -225,7 +181,9 @@
                         <!--Dolor en el pecho-->
                         <div class="input-box">
 
-                                <div class="tooltip">¿Presenta dolor en el pecho?
+                                <div class="tooltip">
+                                    ¿Presenta dolor en el pecho?
+                                    <img class="help" src="Imagenes/help.png" alt="">
                                     <span class="tooltiptext"> Valore este síntoma en un rango del 0 al 10 </br> 0 si no lo padece </br> 10 si lo padece</span>
                                 </div>
                 
@@ -247,20 +205,22 @@
                         </div>
 
                     </div>
-                    
                     <div class="button">
                         <input type="submit" value="Calcular" onclick="geraSpinner()">
                     </div> 
                 </form>
-            </div> 
-        </div>     
-        
-        </div>
-            <div id="block_desativado">
-                <div id = "spinner_desativado"></div>
+            </div>     
+            <div class="modal">
+                <div class="modal-body">
+                    <div class ="spinner"></div>
+                    <p>Realizando consulta</p>
+                </div>
             </div>
-        </div>
-    </section>    
-     
+        </section>
+        <section>
+            <h3>¿No esta familiarizado con los valores para llenar el formulario?</h3>
+            <h5>En esta seccion podra conocer un poco más:</h5>
+        </section>
+    </main>
 </body>
 </html>

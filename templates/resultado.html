@@ -5,115 +5,144 @@
         <title>Fuzzy Logic System for Covid Diagnostique</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="icon" type="image/png" href="Imagenes/HomeAI_logo.png">
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
     </head>
 <body>
-    <header class="site-header">
-        <div class="site-identity">
-            <a href="/"><img src="Imagenes/logo helping others dedos v2.png" alt="Logo HomeAI" /></a>
-            <h1><a href="/">Diagnosticador de COVID-19</a></h1>
-        </div>  
-        <!-- <div class="cloud-logo">
-            <a class = "cabe-direita" href="https://dataplatform.cloud.ibm.com/home2?context=cpdaas"><img src="/IBM_Cloud.png" alt="Logo IBM Cloud"/></a>
-            <h1><a class = "cabe-direita" href="https://dataplatform.cloud.ibm.com/ml-runtime/deployments/6b386324-c218-44c8-a26a-44771f0c687e/test?space_id=497efa9d-bc30-4b16-ae1b-1b5b027dc863&context=cpdaas&flush=true">DEMO v1</a></h1>
-        </div> -->
+    <header class="header">
+        <div class="logo">
+            <a href="/"><img src="Imagenes/icon.png" alt="Logo HomeAI" /></a>
+            <div class="brand">
+                <a href="/index.html">Diagnosticador de COVID-19</a>
+                <a href="" class="menu"><img src="Imagenes/menu.png" alt=""></a>
+            </div>
+        </div>
+        <div class="nav">
+                <ul class="">
+                    <li class="nav-item active">
+                        <a class="" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="" href="/funcmemb.html" >Funciones de Membresia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="" href="http://fontenele.github.io/bootstrap-navbar-dropdowns/" target="_blank">Github</a>
+                    </li>
+                </ul>
+        </div>
     </header>
-    <section class="formulario2">
-        <div class="container" id="formulario">
-          <div class="title">
-            <a href="/">&lt;  Reintentar diagnóstico</a>
-          </div>
-
-          <div class='conteudo'>
-                <br>                
-                <!-- <div>
-                    <h1 class='resultado'>La probabilidad que Ud. <span class="valor_estado"> {{rpta}}</span> 
-                        padezca de un Accidente Cerebrovascular es 
-                        <span class="valor_estado"> {{dados_form}}%</span></h1>      
-                      
-                </div> -->
-                <div>
-                    <h1 class='resultado'>Los resultados para saber si Ud. <!--span class="valor_estado"> {{rpta}}</span--> 
-                        está infectado de COVID-19 son:
-                        <br> El grado de pertenencia en Caso Negativo es <b>{{casoNega}} </b>
-                        <br> El grado de pertenencia en Caso de Cuarentena es <b>{{casoCuarent}}</b>
-                        <br> El grado de pertenencia en Caso Positivo es <b> {{casoPosi}} </b><br>
-                        <br>
-                    <!--span class="valor_estado"> {{dados_form}}%</span--></h1> 
+    <main class="main result">
+        <section class="show-result">
+            <h3 class='resultado'>Los resultados para saber si Ud. <!--span class="valor_estado"> {{rpta}}</span--> 
+                está infectado de COVID-19 son:</h3>
+            <div class="result-details">
+                <canvas id="chartResultado" style="width:100%;max-width:600px"></canvas>
+                <div class="detalles">
+                    <p class="negativo" data-chart="{{casoNega}}">El grado de pertenencia en Caso Negativo es <b>{{casoNega}}</b></p> 
+                    <p class="cuarentena" data-chart="{{casoCuarent}}">El grado de pertenencia en Caso de Cuarentena es <b>{{casoCuarent}}</b></p>
+                    <p class="positivo" data-chart="{{casoPosi}}">El grado de pertenencia en Caso Positivo es <b> {{casoPosi}} </b></p>
                 </div>
-                <div>
-                    <h1 class="resultado">
-                        Sus entradas por cada síntoma fueron:
-                        <br>Temperatura corporal: {{inFiebre}} °C <br>
-                        Edad: {{inEdad}} <br> Nivel de glucosa en sangre: {{inDiabetes}} mg/dl <br>
-                        Contacto con un infectado: {{inHist}}/1 <br>
-                        Dolor de garganta: {{inGarganta}}/1 <br> Tos: {{inTos}}/1 <br>
-                        Pérdida del olfato y/o gusto: {{inPerdida}}/1 <br>
-                        Problemas respiratorios: {{inRespira}}/1 <br>
-                        Dolor en el pecho: {{inPecho}}/10 <br>
-
-                        <br><br><br>
-                        Membresias de las variables de entrada: <br>
-                        Pertenencia de fiebre baja: <b> {{memb_Fiebre_lo}} </b><br>
-                        Pertenencia de fiebre media: <b> {{memb_fiebre_md}} </b><br>
-                        Pertenencia de fiebre alta: <b> {{memb_fiebre_hi}} </b><br>
-                        <br>
-                        Pertenencia de fedad menor a 40: <b> {{memb_edad_men40}} </b><br>
-                        Pertenencia de edad entre 40 y 50: <b> {{memb_edad_40_50}} </b><br>
-                        Pertenencia de edad mayor a 50: <b> {{memb_edad_ma50}} </b><br>
-                        <br>
-                        Pertenencia de diabetes bajo: <b> {{memb_diabetes_low}} </b><br>
-                        Pertenencia de diabetes medio: <b> {{memb_diabetes_md}} </b><br>
-                        Pertenencia de diabetes alto:  <b> {{memb_diabetes_hi}} </b><br>
-                        <br>
-                        Pertenencia de viajero no infectado: <b> {{memb_histViaje_low}} </b><br>
-                        Pertenencia de viajero moderado: <b> {{memb_histViaje_md}} </b><br>
-                        Pertenencia de viajero infectado: <b> {{memb_histViaje_hi}} </b><br>
-                        <br>
-                        Pertenencia de dolor bajo de garganta: <b> {{memb_garganta_low}} </b><br>
-                        Pertenencia de dolor medio de garganta: <b> {{memb_garganta_md}} </b><br>
-                        Pertenencia de dolor alto de garganta: <b> {{memb_garganta_hi}} </b><br>
-                        <br>
-                        Pertenencia de tos bajo: <b> {{memb_tos_low}} </b><br>
-                        Pertenencia de tos medio: <b> {{memb_tos_md}} </b><br>
-                        Pertenencia de tos alto: <b> {{memb_tos_hi}} </b><br>
-                        <br>
-                        Pertenencia de perdida de olfato y gusto bajo: <b> {{memb_olfatoGusto_low}} </b><br>
-                        Pertenencia de perdida de olfato y gusto medio: <b> {{memb_olfatoGusto_md}} </b><br>
-                        Pertenencia de perdida de olfato y gusto alto: <b> {{memb_olfatoGusto_hi}} </b><br>
-                        <br>
-                        Pertenencia de problema respiratorio bajo: <b> {{memb_respira_low}} </b><br>
-                        Pertenencia de problema respiratorio medio: <b> {{memb_respira_md}} </b><br>
-                        Pertenencia de problema respiratorio alto: <b> {{memb_respira_hi}} </b><br>
-                        <br>
-                        Pertenencia de dolor en el pecho bajo: <b> {{memb_pecho_low}} </b><br>
-                        Pertenencia de dolor en el pecho medio: <b> {{memb_pecho_md}} </b><br>
-                        Pertenencia de dolor en el pecho alto: <b> {{memb_pecho_hi}} </b><br>
-                        <br> 
-                    </h1>
+            </div>
+        </section>
+        <section>
+            <h3 class="title-reglas">Datos de entradas y su membresia</h3>
+            <div class="entradas-membresia">
+                <div class="item">
+                    <canvas id="chartFiebre" style="width:100%;max-width:400px"></canvas>
+                    <p class="fiebre-title">Temperatura corporal: {{inFiebre}} °C </p>
+                    <p class="fiebre-baja baja" data-chart="{{memb_Fiebre_lo}}">Pertenencia de fiebre baja: <b> {{memb_Fiebre_lo}} </b></p>
+                    <p class="fiebre-media media" data-chart="{{memb_fiebre_md}}">Pertenencia de fiebre media: <b> {{memb_fiebre_md}} </b></p>
+                    <p class="fiebre-alta alta" data-chart="{{memb_fiebre_hi}}">Pertenencia de fiebre alta: <b> {{memb_fiebre_hi}} </b></p>
                 </div>
-                <!-- REGLAS -->
-                <div class="responsive">
+                <div class="item">
+                    <canvas id="chartEdad" style="width:100%;max-width:400px"></canvas>
+                    <p class="edad-title">Edad: {{inEdad}}</p>
+                    <p class="edad-menor baja" data-chart="{{memb_edad_men40}}">Pertenencia de fedad menor a 40: <b> {{memb_edad_men40}} </b></p>
+                    <p class="edad-entre media" data-chart="{{memb_edad_40_50}}">Pertenencia de edad entre 40 y 50: <b> {{memb_edad_40_50}} </b><br></p>
+                    <p class="edad-mayor alta" data-chart="{{memb_edad_ma50}}">Pertenencia de edad mayor a 50: <b> {{memb_edad_ma50}} </b><br></p>
+                </div>
+                <div class="item">
+                    <canvas id="chartGlucosa" style="width:100%;max-width:400px"></canvas>
+                    <p class="glucosa-title">Nivel de glucosa en sangre: {{inDiabetes}} mg/dl</p>
+                    <p class="glucosa-baja baja" data-chart="{{memb_diabetes_low}}">Pertenencia de diabetes bajo: <b> {{memb_diabetes_low}} </b></p>
+                    <p class="glucosa-media media" data-chart="{{memb_diabetes_md}}">Pertenencia de diabetes medio: <b> {{memb_diabetes_md}} </b></p>
+                    <p class="glucosa-alta alta" data-chart="{{memb_diabetes_hi}}">Pertenencia de diabetes alto:  <b> {{memb_diabetes_hi}} </b></p>
+                </div>
+                <div class="item">
+                    <canvas id="chartViajero" style="width:100%;max-width:400px"></canvas>
+                    <p class="viajero-title">Contacto con un infectado: {{inHist}}/1</p>
+                    <p class="viajero-no baja" data-chart="{{memb_histViaje_low}}">Pertenencia de viajero no infectado: <b> {{memb_histViaje_low}} </b></p>
+                    <p class="viajero-moderado media" data-chart="{{memb_histViaje_md}}">Pertenencia de viajero moderado: <b> {{memb_histViaje_md}} </b></p>
+                    <p class="viajero-infectado alta" data-chart="{{memb_histViaje_hi}}">Pertenencia de viajero infectado: <b> {{memb_histViaje_hi}} </b></p>
+                </div>
+                <div class="item">
+                    <canvas id="chartGarganta" style="width:100%;max-width:400px"></canvas>
+                    <p class="gargantea-title">Dolor de garganta: {{inGarganta}}/1</p>
+                    <p class="gargantea-baja baja" data-chart="{{memb_garganta_low}}">Pertenencia de dolor bajo de garganta: <b> {{memb_garganta_low}} </b></p>
+                    <p class="gargantea-medio media" data-chart="{{memb_garganta_md}}">Pertenencia de dolor medio de garganta: <b> {{memb_garganta_md}} </b></p>
+                    <p class="gargantea-alta alta" data-chart="{{memb_garganta_hi}}">Pertenencia de dolor alto de garganta: <b> {{memb_garganta_hi}} </b></p>
+                </div>
+                <div class="item">
+                    <canvas id="chartTos" style="width:100%;max-width:400px"></canvas>
+                    <p class="tos-title">Tos: {{inTos}}/1</p>
+                    <p class="tos-bajo baja" data-chart="{{memb_tos_low}}">Pertenencia de tos bajo: <b> {{memb_tos_low}} </b></p>
+                    <p class="tos-medio media" data-chart="{{memb_tos_md}}">Pertenencia de tos medio: <b> {{memb_tos_md}} </b><br>
+                    <p class="tos-alta alta" data-chart="{{memb_tos_hi}}">Pertenencia de tos alto: <b> {{memb_tos_hi}} </b></p>
+                </div>
+                <div class="item">
+                    <canvas id="chartOlfato" style="width:100%;max-width:400px"></canvas>
+                    <p class="olfato-title">Pérdida del olfato y/o gusto: {{inPerdida}}/1</p>
+                    <p class="olfato-bajo baja" data-chart="{{memb_olfatoGusto_low}}">Pertenencia de perdida de olfato y gusto bajo: <b> {{memb_olfatoGusto_low}} </b></p>
+                    <p class="olfato-medio media" data-chart="{{memb_olfatoGusto_md}}">Pertenencia de perdida de olfato y gusto medio: <b> {{memb_olfatoGusto_md}} </b></p>
+                    <p class="olfato-alta alta" data-chart="{{memb_olfatoGusto_hi}}">Pertenencia de perdida de olfato y gusto alto: <b> {{memb_olfatoGusto_hi}} </b></p>
+                </div>
+                <div class="item">
+                    <canvas id="chartRespiratorio" style="width:100%;max-width:400px"></canvas>
+                    <p class="respiratorio-title">Problemas respiratorios: {{inRespira}}/1 </p>
+                    <p class="respiratorio-bajo baja" data-chart="{{memb_respira_low}}">Pertenencia de problema respiratorio bajo: <b> {{memb_respira_low}} </b></p>
+                    <p class="respiratorio-medio media" data-chart="{{memb_respira_md}}">Pertenencia de problema respiratorio medio: <b> {{memb_respira_md}} </b></p>
+                    <p class="respiratorio-alta alta" data-chart="{{memb_respira_hi}}">Pertenencia de problema respiratorio alto: <b> {{memb_respira_hi}} </b></p>
+                </div>
+                <div class="item">
+                    <canvas id="chartPecho" style="width:100%;max-width:400px"></canvas>
+                    <p class="pecho-title">Dolor en el pecho: {{inPecho}}/10 </p>
+                    <p class="pecho-bajo baja" data-chart="{{memb_pecho_low}}">Pertenencia de dolor en el pecho bajo: <b> {{memb_pecho_low}} </b></p>
+                    <p class="pecho-medio media" data-chart="{{memb_pecho_md}}">Pertenencia de dolor en el pecho medio: <b> {{memb_pecho_md}} </b></p>
+                    <p class="pecho-alta alta" data-chart="{{memb_pecho_hi}}">Pertenencia de dolor en el pecho alto: <b> {{memb_pecho_hi}} </b></p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h3 class="title-reglas">Reglas aplicadas a los datos de entrada</h3>
+            <div class="reglas">
+                <div class="responsive2">
+                    <div class="description">
+                        <p>Si Fiebre es baja y la Edad es menor a 40, entonces el diagnostico de Coronavirus es Negativo</p>
+                    </div>
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla1.png">
-                            <img src="Imagenes/RuleBase/plotRegla1.png" alt="Regla 1" width="500" height="300">
+                            <img src="Imagenes/RuleBase/plotRegla1.png" alt="Regla 1" width="400" height="300">
                             </a>
                             <div class="desc">Regla 1</div>
                     </div>
                 </div>
-                <br>
-                <div class="responsive">
+                <div class="responsive2">
+                    <div class="description">
+                        <p>Si Fiebre es moderada y la Edad es mayor a 50, entonces el diagnostico de Coronavirus es que debe realizar cuarentena por precausion</p>
+                    </div>
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla2.png">
-                            <img src="Imagenes/RuleBase/plotRegla2.png" alt="Regla 2" width="500" height="300">
+                            <img src="Imagenes/RuleBase/plotRegla2.png" alt="Regla 2" width="400" height="300">
                             </a>
                             <div class="desc">Regla 2</div>
                     </div>
                 </div>
-                <br>
-                <div class="responsive">
+                <div class="responsive2">
+                    <div class="description">
+                        <p>Si Fiebre es alta, la Edad es mayor a 50 y no ha tenido contacto con un infectado, entonces el diagnostico de Coronavirus es realizar cuarentena por precausion</p>
+                    </div>
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla3.png">
                             <img src="Imagenes/RuleBase/plotRegla3.png" alt="Regla 3" width="500" height="300">
@@ -121,8 +150,10 @@
                             <div class="desc">Regla 3</div>
                     </div>
                 </div>
-                <br>
-                <div class="responsive">
+                <div class="responsive2">
+                    <div class="description">
+                        <p>Si Fiebre es alta, la Edad es mayor a 50 y ha tenido contacto con un infectado, entonces el diagnostico de Coronavirus es probablemente positivo</p>
+                    </div>
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla4.png">
                             <img src="Imagenes/RuleBase/plotRegla4.png" alt="Regla 4" width="500" height="300">
@@ -130,8 +161,10 @@
                             <div class="desc">Regla 4</div>
                     </div>
                 </div>
-                <br>
-                <div class="responsive">
+                <div class="responsive2">
+                    <div class="description">
+                        <p>Si Dolor de garganta es bajo, la Edad es menor a 40 y no ha tenido contacto con un infectado, entonces el diagnostico de Coronavirus realizar cuarentena</p>
+                    </div>
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla5.png">
                             <img src="Imagenes/RuleBase/plotRegla5.png" alt="Regla 5" width="500" height="300">
@@ -139,8 +172,10 @@
                             <div class="desc">Regla 5</div>
                     </div>
                 </div>
-                <br>
-                <div class="responsive">
+                <div class="responsive2">
+                    <div class="description">
+                        <p>Si Dolor de garganta es alto, la Edad es mayor a 40 y la tos es seca, entonces el diagnostico de Coronavirus realizar cuarentena por precausion</p>
+                    </div>
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla6.png">
                             <img src="Imagenes/RuleBase/plotRegla6.png" alt="Regla 6" width="500" height="300">
@@ -148,8 +183,10 @@
                             <div class="desc">Regla 6</div>
                     </div>
                 </div>
-                <br>
-                <div class="responsive">
+                <div class="responsive2">
+                    <div class="description">
+                        <p>Si No presenta problemas respiratorios, la Edad es mayor a 40 y la tos es seca, entonces el diagnostico de Coronavirus es negativo</p>
+                    </div>
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla7.png">
                             <img src="Imagenes/RuleBase/plotRegla7.png" alt="Regla 7" width="500" height="300">
@@ -157,8 +194,7 @@
                             <div class="desc">Regla 7</div>
                     </div>
                 </div>
-                <br>
-                <div class="responsive">
+                <div class="responsive2">
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla8.png">
                             <img src="Imagenes/RuleBase/plotRegla8.png" alt="Regla 8" width="500" height="300">
@@ -166,8 +202,7 @@
                             <div class="desc">Regla 8</div>
                     </div>
                 </div>
-                <br>
-                <div class="responsive">
+                <div class="responsive2">
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla9.png">
                             <img src="Imagenes/RuleBase/plotRegla9.png" alt="Regla 9" width="500" height="300">
@@ -175,8 +210,7 @@
                             <div class="desc">Regla 9</div>
                     </div>
                 </div>
-                <br>
-                <div class="responsive">
+                <div class="responsive2">
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla10.png">
                             <img src="Imagenes/RuleBase/plotRegla10.png" alt="Regla 10" width="500" height="300">
@@ -184,8 +218,7 @@
                             <div class="desc">Regla 10</div>
                     </div>
                 </div>
-                <br>
-                <div class="responsive">
+                <div class="responsive2">
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla11.png">
                             <img src="Imagenes/RuleBase/plotRegla11.png" alt="Regla 11" width="500" height="300">
@@ -193,8 +226,7 @@
                             <div class="desc">Regla 11</div>
                     </div>
                 </div>
-                <br>
-                <div class="responsive">
+                <div class="responsive2">
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla12.png">
                             <img src="Imagenes/RuleBase/plotRegla12.png" alt="Regla 12" width="500" height="300">
@@ -202,8 +234,7 @@
                             <div class="desc">Regla 12</div>
                     </div>
                 </div>
-                <br>
-                <div class="responsive">
+                <div class="responsive2">
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla13.png">
                             <img src="Imagenes/RuleBase/plotRegla13.png" alt="Regla 13" width="500" height="300">
@@ -211,8 +242,7 @@
                             <div class="desc">Regla 13</div>
                     </div>
                 </div>
-                <br>
-                <div class="responsive">
+                <div class="responsive2">
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla14.png">
                             <img src="Imagenes/RuleBase/plotRegla14.png" alt="Regla 14" width="500" height="300">
@@ -220,8 +250,7 @@
                             <div class="desc">Regla 14</div>
                     </div>
                 </div>
-                <br>
-                <div class="responsive">
+                <div class="responsive2">
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla15.png">
                             <img src="Imagenes/RuleBase/plotRegla15.png" alt="Regla 15" width="500" height="300">
@@ -229,8 +258,7 @@
                             <div class="desc">Regla 15</div>
                     </div>
                 </div>
-                <br>
-                <div class="responsive">
+                <div class="responsive2">
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla16.png">
                             <img src="Imagenes/RuleBase/plotRegla16.png" alt="Regla 16" width="500" height="300">
@@ -238,8 +266,7 @@
                             <div class="desc">Regla 16</div>
                     </div>
                 </div>
-                <br>
-                <div class="responsive">
+                <div class="responsive2">
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla17.png">
                             <img src="Imagenes/RuleBase/plotRegla17.png" alt="Regla 17" width="500" height="300">
@@ -247,8 +274,8 @@
                             <div class="desc">Regla 17</div>
                     </div>
                 </div>
-
-                <div class="responsive">
+                <br>
+                <div class="responsive2">
                     <div class="gallery">
                         <h4>Conclusión de la defuzzificacion</h4>
                         <a target="_blank" href="Imagenes/Conclusion/plotDefuzzy.png">
@@ -260,18 +287,9 @@
                             </div>
                     </div>
                 </div>
-
-                <br>
-          </div>
-        </div>
-    </section>
-
-    
-        
-    
-
-    </body>
-    
- 
+            </div>
+        </section>
+    </main>
+    <script src="chart.js"></script>
 </body>
 </html>

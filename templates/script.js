@@ -26,8 +26,12 @@ function geraSpinner(){
       }
     }
     setTimeout(function () {
-        document.getElementById("conteudo").innerHTML = "";
-        document.getElementById("spinner_desativado").id = "spinner_ativado";
-        document.getElementById("block_desativado").id = "block_ativado";
-    }, 300)
+        //document.getElementById("conteudo").innerHTML = "";
+        //document.getElementById("spinner_desativado").id = "spinner_ativado";
+        //document.getElementById("block_desativado").id = "block_ativado";
+        document.querySelector(".modal").classList.add('show-modal');
+        //document.querySelector(".spinner").classList.add('show-spinner');
+    }, 500)
+    setTimeout(function () {
+  }, 300)
 }
