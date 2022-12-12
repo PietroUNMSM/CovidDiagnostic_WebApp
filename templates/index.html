@@ -42,18 +42,20 @@
                         <!--Fiebre-->
                         <div class="input-box">
                             <span class="detalhes">¿Cuál es su Temperatura Corporal?</span>
-                            <input type="number" step="0.01" pattern="[0-9]+([,\.][0-9]+)?" formnovalidate  name="fiebre" required>
+                            <input id="fiebre" type="number" step="0.01" pattern="[0-9]+([,\.][0-9]+)?" min="35.3" max="41.3" placeholder="Rango de temperatura [35.3 - 41.3]" formnovalidate  name="fiebre" required>
+                            <p class="error-input">*Ingrese un valor dentro del rango permitido [35.3 - 41.3]</p>
                         </div>
                         <!--Edad-->
                         <div class="input-box">
                             <span class="detalhes">¿Cuál es su edad?</span>
-                            <input type="number" name="age" required>
-                            
+                            <input id="edad" type="number" name="age" placeholder="Rango de Edad [10 - 70]" required>
+                            <p class="error-input">*Ingrese un valor dentro del rango permitido [10-70]</p>
                         </div>
                         <!--Diabetes-->
-                        <div class="input-box">
+                        <div class="input-box box-all">
                             <span class="detalhes">¿Cuál es su Nivel de Glucosa en la sangre (mg/dl)?</span>
-                            <input type="number" step="0.01" pattern="[0-9]+([,\.][0-9]+)?" formnovalidate  name="diabetes" required>
+                            <input id="diabetes" type="number" step="0.01" pattern="[0-9]+([,\.][0-9]+)?" placeholder="Rango del nivel de glucosa [140 - 215]" formnovalidate  name="diabetes" required>
+                            <p class="error-input">*Ingrese un valor dentro del rango permitido [140 - 215]</p>
                         </div>
                         <!--Historial de viaje-->
                         <div class="input-box">
@@ -62,8 +64,18 @@
                                 <img class="help" src="Imagenes/help.png" alt="">
                                 <span class="tooltiptext"> Valor de este síntoma en un rango del 0 al 1 </br> 0 si no ha tenido contacto </br> 1 si alguna ha tenido contacto</span>
                             </div>
-                            <div class="slidecontainer">
-                                <input type="range" min="0.00" max="1.00" step="0.01" value="0.00" class="slider" id="rangeHist" name="nameHist">
+                            <div class="labels">
+                                <div class="label1">No</div>
+                                <div class="label2">No estoy seguro</div>
+                                <div class="label3">Si</div>
+                            </div>
+                            <div class="slidecontainer relative">
+                                <div class="ranges">
+                                    <div class="range1"></div>
+                                    <div class="range2"></div>
+                                    <div class="range3"></div>
+                                </div>
+                                <input type="range" min="0.00" max="1.00" step="0.01" value="0.00" class="contacto slider" id="rangeHist" name="nameHist">
                                 <p>Input: <span id="inputHist"></span></p>
                             </div>
                             
@@ -84,7 +96,17 @@
                                 <img class="help" src="Imagenes/help.png" alt="">
                                 <span class="tooltiptext"> Valore este síntoma en un rango del 0 al 1 </br> 0 si no lo padece </br> 1 si lo padece</span>
                             </div>
-                            <div class="slidecontainer">
+                            <div class="labels">
+                                <div class="label1">Bajo</div>
+                                    <div class="label2">Medio</div>
+                                    <div class="label3">Alto</div>
+                            </div>
+                            <div class="slidecontainer relative">
+                                <div class="ranges">
+                                    <div class="range1"></div>
+                                    <div class="range2"></div>
+                                    <div class="range3"></div>
+                                </div>
                                 <input type="range" min="0.0" max="1.00" value="0.00" step="0.01" class="slider" id="rangeGarganta" name="nameGarganta">
                                 <p>Input: <span id="inputGarganta"></span></p>
                             </div>
@@ -107,9 +129,17 @@
                                     <img class="help" src="Imagenes/help.png" alt="">
                                     <span class="tooltiptext"> Valore este síntoma en un rango del 0 al 1 </br> 0 si no lo padece </br> 1 si lo padece</span>
                                 </div>
-    
-
-                                <div class="slidecontainer">
+                                <div class="labels">
+                                    <div class="label1">Bajo</div>
+                                    <div class="label2">Medio</div>
+                                    <div class="label3">Alto</div>
+                                </div>
+                                <div class="slidecontainer relative">
+                                    <div class="ranges">
+                                        <div class="range1"></div>
+                                        <div class="range2"></div>
+                                        <div class="range3"></div>
+                                    </div>
                                     <input type="range" min="0.0" max="1.00" value="0.00" step="0.01" class="slider" id="rangeTos" name="nameTos">
                                     <p>Input: <span id="inputTos"></span></p>
                                 </div>
@@ -134,9 +164,17 @@
                                     <img class="help" src="Imagenes/help.png" alt="">
                                     <span class="tooltiptext"> Valore este síntoma en un rango del 0 al 1 </br> 0 si no lo padece </br> 1 si lo padece</span>
                                 </div>
-                            
-
-                                <div class="slidecontainer">
+                                <div class="labels">
+                                    <div class="label1">Bajo</div>
+                                    <div class="label2">Medio</div>
+                                    <div class="label3">Alto</div>
+                                </div>
+                                <div class="slidecontainer relative">
+                                    <div class="ranges">
+                                        <div class="range1"></div>
+                                        <div class="range2"></div>
+                                        <div class="range3"></div>
+                                    </div>
                                     <input type="range" min="0.0" max="1.00" value="0.00" step="0.01" class="slider" id="rangePerdida" name="namePerdida">
                                     <p>Input: <span id="inputPerdida"></span></p>
                                 </div>
@@ -160,9 +198,17 @@
                                     <img class="help" src="Imagenes/help.png" alt="">
                                     <span class="tooltiptext"> Valore este síntoma en un rango del 0 al 1 </br> 0 si no lo padece </br> 1 si lo padece</span>
                                 </div>
-
-
-                                <div class="slidecontainer">
+                                <div class="labels">
+                                    <div class="label1">Bajo</div>
+                                    <div class="label2">Medio</div>
+                                    <div class="label3">Alto</div>
+                                </div>
+                                <div class="slidecontainer relative">
+                                    <div class="ranges">
+                                        <div class="range1"></div>
+                                        <div class="range2"></div>
+                                        <div class="range3"></div>
+                                    </div>
                                     <input type="range" min="0.0" max="1.00" value="0.00" step="0.01" class="slider" id="rangeRespira" name="nameRespira">
                                     <p>Input: <span id="inputRespira"></span></p>
                                 </div>
@@ -186,8 +232,17 @@
                                     <img class="help" src="Imagenes/help.png" alt="">
                                     <span class="tooltiptext"> Valore este síntoma en un rango del 0 al 10 </br> 0 si no lo padece </br> 10 si lo padece</span>
                                 </div>
-                
-                                <div class="slidecontainer">
+                                <div class="labels">
+                                    <div class="label1">Bajo</div>
+                                    <div class="label2">Medio</div>
+                                    <div class="label3">Alto</div>
+                                </div>
+                                <div class="slidecontainer relative">
+                                    <div class="ranges">
+                                        <div class="range1"></div>
+                                        <div class="range2"></div>
+                                        <div class="range3"></div>
+                                    </div>
                                     <input type="range" min="0.0" max="10" value="0" step="1" class="slider" id="rangePecho" name="namePecho">
                                     <p>Input: <span id="inputPecho"></span></p>
                                 </div>
