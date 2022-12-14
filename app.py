@@ -141,63 +141,7 @@ def ObteniendoInputs():
         concluX=concluX, concluY=concluY, casoNega=casoNega, casoCuarent=casoCuarent, casoPosi=casoPosi)
 
 
-# def PreverValorAluguel():
 
-#     dados_form = []
-    
-#     dados_form.append(request.form.get("gender"))
-#     dados_form.append(int(request.form.get("age")))
-#     dados_form.append(int(request.form.get("hypertension")))
-#     dados_form.append(int(request.form.get("heart_disease")))
-
-#     #dados_form.append(request.form.get("famhist"))
-    
-#     dados_form.append(request.form.get("ever_married"))
-#     dados_form.append(request.form.get("work_type"))
-#     dados_form.append(request.form.get("Residence_type"))
-#     dados_form.append(float(request.form.get("avg_glucose_level")))
-#     dados_form.append(float(request.form.get("bmi")))
-#     dados_form.append(request.form.get("smoking_status"))
-
-    
-
-#     carga_final = []
-#     carga_final.append(dados_form)
-    
-#     # NOTE: you must manually set API_KEY below using information retrieved from your IBM Cloud account.
-#     API_KEY = "B0F4ljfW0KSZdV7CdwNzuCzWA2KKFGBKyK7U3OlPsjmg"
-
-#     token_response = requests.post('https://iam.cloud.ibm.com/identity/token', data={"apikey": API_KEY, "grant_type": 'urn:ibm:params:oauth:grant-type:apikey'})
-#     mltoken = token_response.json()["access_token"]
-
-#     header = {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + mltoken}
-
-#     #NOTE: manually define and pass the array(s) of values to be scored in the next line
-#     payload_scoring = {"input_data": [{"fields": ["gender","age","hypertension","heart_disease","ever_married","work_type",
-#                                       "Residence_type","avg_glucose_level","bmi","smoking_status"], "values": carga_final}]}
-
-#     response_scoring = requests.post('https://us-south.ml.cloud.ibm.com/ml/v4/deployments/6b386324-c218-44c8-a26a-44771f0c687e/predictions?version=2022-10-16', 
-#                                       json=payload_scoring, headers={'Authorization': 'Bearer ' + mltoken})
-#     print("Scoring response")
-#     print(response_scoring.json())
-    
-#     json_str = json.loads(response_scoring.text) 
-#     json_predictions = json_str['predictions'][0]
-#     json_resultado = json_predictions['values'][0][0]
-#     json_probabilidad = json_predictions['values'][0][1] * 100 
-#     valor_aluguel = round(json_probabilidad,2)
-#     #valor_aluguel = json_resultado
-#     #print(valor_aluguel)
-
-#     if(json_resultado =='no'):
-#         respuesta = 'NO'
-#     else:
-#         respuesta = 'SI'
-
-#     #}valor_aluguel = carga_final
-#     return render_template('resultado.html',rpta=respuesta, dados_form=valor_aluguel)
-#     #return render_template('resultado.html',dados_form=response_scoring.json())
-#     #return response_scoring.json()
 
 def diagnostico():
     if request.method == 'POST':

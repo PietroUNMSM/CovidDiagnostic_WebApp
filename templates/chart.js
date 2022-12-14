@@ -1,7 +1,7 @@
 //Resultado
 var nega = document.querySelector(".negativo").dataset.chart;
-var cuarentena = nega = document.querySelector(".cuarentena").dataset.chart;
-var positivo = nega = document.querySelector(".positivo").dataset.chart;
+var cuarentena = document.querySelector(".cuarentena").dataset.chart;
+var positivo = document.querySelector(".positivo").dataset.chart;
 //Datos fiebre
 var fiebre_baja = document.querySelector(".fiebre-baja").dataset.chart;
 var fiebre_media = document.querySelector(".fiebre-media").dataset.chart;
@@ -71,7 +71,7 @@ var xValuesGlucosa = ["Diabetes bajo", "Diabetes medio", "Diabetes alto"];
 var yValuesGlucosa = [glucosa_baja,glucosa_media,glucosa_alta];
 
 //Datos viajero
-var xValuesViajero = ["Viajero no infectado", "Viajero moderado", "Viajero infectado"];
+var xValuesViajero = ["NO contacto con infectado(s)", "Duda de contacto", "Contacto infectado(s)"];
 var yValuesViajero = [viajero_baja,viajero_media,viajero_alta];
 
 //Datos Garganta

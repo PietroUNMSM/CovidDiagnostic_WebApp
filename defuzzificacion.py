@@ -1,22 +1,6 @@
 from baseReglas import *
 
-# conclu_activation_neg1 = regla1()
-# conclu_activation_cua1 = regla2()
-# conclu_activation_cua2 = regla3()
-# conclu_activation_posi1 = regla4()
-# conclu_activation_cua3 = regla5()
-# conclu_activation_cua4 = regla6()
-# conclu_activation_neg2 = regla7()
-# conclu_activation_posi2 = regla8()
-# conclu_activation_neg3 = regla9()
-# conclu_activation_posi3 = regla10()
-# conclu_activation_posi4 = regla11()
-# conclu_activation_posi5 = regla12()
-# conclu_activation_posi6 = regla13()
-# conclu_activation_posi7 = regla14()
-# conclu_activation_posi8 = regla15()
-# conclu_activation_posi9 = regla16()
-# conclu_activation_neg4 = regla17()
+
 
 #AGREGACION
 def defuzzy(conclu_activation_neg1, conclu_activation_cua1, conclu_activation_cua2, conclu_activation_posi1, conclu_activation_cua3, conclu_activation_cua4, conclu_activation_neg2, conclu_activation_posi2, conclu_activation_neg3, conclu_activation_posi3, conclu_activation_posi4, conclu_activation_posi5, conclu_activation_posi6, conclu_activation_posi7, conclu_activation_posi8, conclu_activation_posi9, conclu_activation_neg4):

@@ -28,7 +28,10 @@
                         <a class="" href="/funcmemb.html" >Funciones de Membresia</a>
                     </li>
                     <li class="nav-item">
-                        <a class="" href="http://fontenele.github.io/bootstrap-navbar-dropdowns/" target="_blank">Github</a>
+                        <a class="" href="/info.html" >Sobre el proyecto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="" href="https://github.com/PietroUNMSM/CovidDiagnostic_WebApp" target="_blank">Github</a>
                     </li>
                 </ul>
         </div>
@@ -73,9 +76,9 @@
                 <div class="item">
                     <canvas id="chartViajero" style="width:100%;max-width:400px"></canvas>
                     <p class="viajero-title">Contacto con un infectado: {{inHist}}/1</p>
-                    <p class="viajero-no baja" data-chart="{{memb_histViaje_low}}">Pertenencia de viajero no infectado: <b> {{memb_histViaje_low}} </b></p>
-                    <p class="viajero-moderado media" data-chart="{{memb_histViaje_md}}">Pertenencia de viajero moderado: <b> {{memb_histViaje_md}} </b></p>
-                    <p class="viajero-infectado alta" data-chart="{{memb_histViaje_hi}}">Pertenencia de viajero infectado: <b> {{memb_histViaje_hi}} </b></p>
+                    <p class="viajero-no baja" data-chart="{{memb_histViaje_low}}">Pertenencia de NO contacto con infectado(s): <b> {{memb_histViaje_low}} </b></p>
+                    <p class="viajero-moderado media" data-chart="{{memb_histViaje_md}}">Pertenencia de duda de contacto con infectado(s): <b> {{memb_histViaje_md}} </b></p>
+                    <p class="viajero-infectado alta" data-chart="{{memb_histViaje_hi}}">Pertenencia de contacto con infectado(s): <b> {{memb_histViaje_hi}} </b></p>
                 </div>
                 <div class="item">
                     <canvas id="chartGarganta" style="width:100%;max-width:400px"></canvas>
@@ -119,159 +122,176 @@
             <div class="reglas">
                 <div class="responsive2">
                     <div class="description">
-                        <p>Si Fiebre es baja y la Edad es menor a 40, entonces el diagnostico de Coronavirus es Negativo</p>
+                        <p><b>Regla 1: </b>Si Fiebre es baja y la Edad es menor a 40, entonces el diagnostico de Coronavirus es Negativo.</p>
                     </div>
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla1.png">
                             <img src="Imagenes/RuleBase/plotRegla1.png" alt="Regla 1" width="400" height="300">
                             </a>
-                            <div class="desc">Regla 1</div>
+                            <!-- <div class="desc">Regla 1</div> -->
                     </div>
                 </div>
                 <div class="responsive2">
                     <div class="description">
-                        <p>Si Fiebre es moderada y la Edad es mayor a 50, entonces el diagnostico de Coronavirus es que debe realizar cuarentena por precausion</p>
+                        <p><b>Regla 2: </b>Si Fiebre es moderada y la Edad es mayor a 50, entonces el diagnostico de Coronavirus es que debe realizar cuarentena por precausion.</p>
                     </div>
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla2.png">
                             <img src="Imagenes/RuleBase/plotRegla2.png" alt="Regla 2" width="400" height="300">
                             </a>
-                            <div class="desc">Regla 2</div>
+                            <!-- <div class="desc">Regla 2</div> -->
                     </div>
                 </div>
                 <div class="responsive2">
                     <div class="description">
-                        <p>Si Fiebre es alta, la Edad es mayor a 50 y no ha tenido contacto con un infectado, entonces el diagnostico de Coronavirus es realizar cuarentena por precausion</p>
+                        <p><b>Regla 3: </b>Si Fiebre es alta, la Edad es mayor a 50 y duda de haber tenido contacto con un infectado, entonces el diagnostico de Coronavirus es realizar cuarentena por precausion</p>
                     </div>
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla3.png">
                             <img src="Imagenes/RuleBase/plotRegla3.png" alt="Regla 3" width="500" height="300">
                             </a>
-                            <div class="desc">Regla 3</div>
+                            <!-- <div class="desc">Regla 3</div> -->
                     </div>
                 </div>
                 <div class="responsive2">
                     <div class="description">
-                        <p>Si Fiebre es alta, la Edad es mayor a 50 y ha tenido contacto con un infectado, entonces el diagnostico de Coronavirus es probablemente positivo</p>
+                        <p><b>Regla 4: </b>Si Fiebre es alta, la Edad es mayor a 50 y ha tenido contacto con un infectado, entonces el diagnostico de Coronavirus es probablemente positivo</p>
                     </div>
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla4.png">
                             <img src="Imagenes/RuleBase/plotRegla4.png" alt="Regla 4" width="500" height="300">
                             </a>
-                            <div class="desc">Regla 4</div>
+                            <!-- <div class="desc">Regla 4</div> -->
                     </div>
                 </div>
                 <div class="responsive2">
                     <div class="description">
-                        <p>Si Dolor de garganta es bajo, la Edad es menor a 40 y no ha tenido contacto con un infectado, entonces el diagnostico de Coronavirus realizar cuarentena</p>
+                        <p><b>Regla 5: </b>Si Dolor de garganta es bajo, la Edad es menor a 40 y duda haber tenido contacto con un infectado, entonces el diagnostico de Coronavirus es realizar cuarentena</p>
                     </div>
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla5.png">
                             <img src="Imagenes/RuleBase/plotRegla5.png" alt="Regla 5" width="500" height="300">
                             </a>
-                            <div class="desc">Regla 5</div>
+                            <!-- <div class="desc">Regla 5</div> -->
                     </div>
                 </div>
                 <div class="responsive2">
                     <div class="description">
-                        <p>Si Dolor de garganta es alto, la Edad es mayor a 40 y la tos es seca, entonces el diagnostico de Coronavirus realizar cuarentena por precausion</p>
+                        <p><b>Regla 6: </b>Si Dolor de garganta es alto, la Edad es mayor a 40 y la tos es seca, entonces el diagnostico de Coronavirus es realizar cuarentena por precausion</p>
                     </div>
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla6.png">
                             <img src="Imagenes/RuleBase/plotRegla6.png" alt="Regla 6" width="500" height="300">
                             </a>
-                            <div class="desc">Regla 6</div>
+                            <!-- <div class="desc">Regla 6</div> -->
                     </div>
                 </div>
                 <div class="responsive2">
                     <div class="description">
-                        <p>Si No presenta problemas respiratorios, la Edad es mayor a 40 y la tos es seca, entonces el diagnostico de Coronavirus es negativo</p>
+                        <p><b>Regla 7: </b>Si No presenta problemas respiratorios, la Edad es mayor a 40 y la tos es seca, entonces el diagnostico de Coronavirus es negativo</p>
                     </div>
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla7.png">
                             <img src="Imagenes/RuleBase/plotRegla7.png" alt="Regla 7" width="500" height="300">
                             </a>
-                            <div class="desc">Regla 7</div>
+                            <!-- <div class="desc">Regla 7</div> -->
                     </div>
                 </div>
                 <div class="responsive2">
+                    <div class="description">
+                        <p><b>Regla 8: </b>Si la Edad es mayor o igual a 40, la Tos es alta y el problema respiratorio es alto, entonces el diagnostico de Coronavirus es positivo</p>
+                    </div>
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla8.png">
                             <img src="Imagenes/RuleBase/plotRegla8.png" alt="Regla 8" width="500" height="300">
                             </a>
-                            <div class="desc">Regla 8</div>
+                            <!-- <div class="desc">Regla 8</div> -->
                     </div>
                 </div>
                 <div class="responsive2">
+                    <div class="description">
+                        <p><b>Regla 9: </b>Si la Edad es mayor o igual a 40 y No hay problemas respiratorios, entonces el diagnostico de Coronavirus es negativo</p>
+                    </div>
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla9.png">
                             <img src="Imagenes/RuleBase/plotRegla9.png" alt="Regla 9" width="500" height="300">
                             </a>
-                            <div class="desc">Regla 9</div>
+                            <!-- <div class="desc">Regla 9</div> -->
                     </div>
                 </div>
                 <div class="responsive2">
+                    <p><b>Regla 10: </b>Si la Edad es menor a 40, sí ha tenido contacto con algún infectado y tiene problemas respiratorios altos, entonces el diagnostico de Coronavirus es positivo</p>
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla10.png">
                             <img src="Imagenes/RuleBase/plotRegla10.png" alt="Regla 10" width="500" height="300">
                             </a>
-                            <div class="desc">Regla 10</div>
+                            <!-- <div class="desc">Regla 10</div> -->
                     </div>
                 </div>
                 <div class="responsive2">
+                    <p><b>Regla 11: </b>Si la Edad es mayor a 50, sí ha tenido contacto con algún infectado y tiene problemas respiratorios altos, entonces el diagnostico de Coronavirus es positivo</p>
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla11.png">
                             <img src="Imagenes/RuleBase/plotRegla11.png" alt="Regla 11" width="500" height="300">
                             </a>
-                            <div class="desc">Regla 11</div>
+                            <!-- <div class="desc">Regla 11</div> -->
                     </div>
                 </div>
                 <div class="responsive2">
+                    <p><b>Regla 12: </b>Si la Edad es mayor o igual a 40, sí ha tenido contacto con algún infectado, la Tos es alta y tiene altos problemas respiratorios, entonces el diagnostico de Coronavirus es negativo</p>
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla12.png">
                             <img src="Imagenes/RuleBase/plotRegla12.png" alt="Regla 12" width="500" height="300">
                             </a>
-                            <div class="desc">Regla 12</div>
+                            <!-- <div class="desc">Regla 12</div> -->
                     </div>
                 </div>
                 <div class="responsive2">
+                    <p><b>Regla 13: </b>Si la Edad es mayor o igual a 40 O tiene grado alto de diabetes O duda de contacto con algún infectado O 
+                        la tos es seca O tiene problemas respiratorios altos, entonces el diagnostico de Coronavirus es positivo</p>
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla13.png">
                             <img src="Imagenes/RuleBase/plotRegla13.png" alt="Regla 13" width="500" height="300">
                             </a>
-                            <div class="desc">Regla 13</div>
+                            <!-- <div class="desc">Regla 13</div> -->
                     </div>
                 </div>
                 <div class="responsive2">
+                    <p><b>Regla 14: </b>Si la Edad es mayor o igual a 40, tiene grado alto de diabetes y duda de haber tenido contacto con algun infectado, entonces el diagnostico de Coronavirus es realizar cuarentena por precausion</p>
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla14.png">
                             <img src="Imagenes/RuleBase/plotRegla14.png" alt="Regla 14" width="500" height="300">
                             </a>
-                            <div class="desc">Regla 14</div>
+                            <!-- <div class="desc">Regla 14</div> -->
                     </div>
                 </div>
                 <div class="responsive2">
+                    <p><b>Regla 15: </b>Si ha perdido el sentido del olfato y/o sabor y el dolor en el pecho es alto, entonces el diagnostico de Coronavirus es positivo</p>
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla15.png">
                             <img src="Imagenes/RuleBase/plotRegla15.png" alt="Regla 15" width="500" height="300">
                             </a>
-                            <div class="desc">Regla 15</div>
+                            <!-- <div class="desc">Regla 15</div> -->
                     </div>
                 </div>
                 <div class="responsive2">
+                    <p><b>Regla 16: </b>Si duda de haber tenido contacto con algún infectado, tiene grado alto de dolor de garganta, la tos es alta, 
+                        y el dolor en el pecho es alto, entonces el diagnostico de Coronavirus es positivo</p>
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla16.png">
                             <img src="Imagenes/RuleBase/plotRegla16.png" alt="Regla 16" width="500" height="300">
                             </a>
-                            <div class="desc">Regla 16</div>
+                            <!-- <div class="desc">Regla 16</div> -->
                     </div>
                 </div>
                 <div class="responsive2">
+                    <p><b>Regla 17: </b>Si la Edad es menor a 40, no tuvo contacto con algún infectado y no tiene dolor de garganta, entonces el diagnostico de Coronavirus es negativo</p>
+                    
                     <div class="gallery">
                         <a target="_blank" href="Imagenes/RuleBase/plotRegla17.png">
                             <img src="Imagenes/RuleBase/plotRegla17.png" alt="Regla 17" width="500" height="300">
                             </a>
-                            <div class="desc">Regla 17</div>
+                            <!-- <div class="desc">Regla 17</div> -->
                     </div>
                 </div>
                 <br>

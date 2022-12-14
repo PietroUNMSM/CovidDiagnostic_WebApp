@@ -89,7 +89,7 @@ def plotHistViajes():
     plotHistV = plt.plot(x_histviaje, hist_no_infect, color='b', label='No infectado')
     plotHistV = plt.plot(x_histviaje, hist_moderado, color='g', label ='Duda de infección')
     plotHistV = plt.plot(x_histviaje, hist_infect, color='r', label ='Infectado')
-    plotHistV = plt.title('Funciones de Membresía de Historial de Viajes')
+    plotHistV = plt.title('Funciones de Membresía de Contacto con algún infectado')
     plotHistV = plt.legend(bbox_to_anchor=(1.05, 1.0), loc='upper left')
     # plt.axis([10,70,0,1])
     # plotHistV

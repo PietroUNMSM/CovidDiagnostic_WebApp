@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-ES">
+    <head>
+        <meta charset="UTF-8">
+        <title>Fuzzy Logic System for Covid Diagnostique</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="icon" type="image/png" href="Imagenes/HomeAI_logo.png">
+        <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+        <script src="script.js"> </script>
+    </head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="/"><img src="Imagenes/icon.png" alt="Logo HomeAI" /></a>
+            <div class="brand">
+                <a href="/index.html">Diagnosticador de COVID-19</a>
+                <a href="" class="menu"><img src="Imagenes/menu.png" alt=""></a>
+            </div>
+        </div>
+        <div class="nav">
+                <ul class="">
+                    <li class="nav-item active">
+                        <a class="" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="" href="/funcmemb.html" >Funciones de Membresia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="" href="/info.html" >Sobre el proyecto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="" href="https://github.com/PietroUNMSM/CovidDiagnostic_WebApp" target="_blank">Github</a>
+                    </li>
+                </ul>
+        </div>
+    </header>
+    <main class="main">
+        <section>
+            <h3>SOBRE EL PROYECTO</h3>
+            <h4>Este diagnosticador fue realizado como proyecto final del curso de Sistemas Inteligentes 2022-II 
+                tomando los conceptos de lógica difusa con el propósito de inferir la probabilidad que tenga el 
+                usuario de padecer de COVID-19 de acuerdo a los síntomas que ingrese.</h4>
+            <h5><br>¿Quiénes puede usar este diagnosticador?</h5>
+                <ul style="padding-left: revert;">
+                    <li>Cualquier usuario puede usar esta webapp como referencia para diagnosticar un posible caso de contagio por COVID-19</li>
+                </ul>
+            <h5><br>¿Puedo usarlo en un celular?</h5>
+            <ul style="padding-left: revert;">
+                <li>Por supuesto, al ser una aplicativo web puede ser 
+                    usado tanto en computadoras y dispositivos móviles
+                    a través de una navegador web (Chrome, Opera...)
+                </li>
+            </ul>
+            <br>
+
+            
+        </section>
+
+        <section>
+            <h3>METODOLOGÍA BASADA EN LA INFERENCIA DE MAMDANI</h3>
+
+                <ul style="padding-left: revert;">
+                    <ol>I.   Declaración de variables o síntomas</ol>
+                    <ol>II.  Declaración de funciones de membresía por cada síntoma</ol>
+                    <ol>III. Declaración de reglas difusas o ruleset</ol>
+                    <ol>IV.  Fuzzificación</ol>
+                    <ol>V.   Evaluación de reglas difusas</ol>
+                    <ol>VI.   Defuzzificación</ol>
+                </ul>
+        </section>
+
+        <section>
+            <h3>HERRAMIENTAS</h3>
+            
+                <div class="row">
+                    
+                    <div class="row">
+                        <div class="column" style="width: 100%;">
+                            <h4>Sistema de Inferencia Difusa</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column" style="width: 25%;">
+                            <p>Python 3.10.6</p>
+                            <img style="width:80px; padding-left: inherit;" src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg">
+                        </div>
+                        <div class="column" style="width: 25%;">
+                            <p>Scikit-fuzzy</p>
+                            <img style="width:80px; padding-left: inherit;" src="https://pythonhosted.org/scikit-fuzzy/_static/img/logo.png">
+                        </div>
+                    <!-- </div>
+                    <div class="row"> -->
+                        <div class="column" style="width: 25%;">
+                            <p>Matplotlib</p>
+                            <img style="width:80px; padding-left: inherit;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Created_with_Matplotlib-logo.svg/1024px-Created_with_Matplotlib-logo.svg.png">
+                        </div>
+                        <div class="column" style="width: 25%;">
+                            <p>Flask</p>
+                            <img style="width:80px; padding-left: inherit;" src="https://www.seekpng.com/png/detail/875-8753366_flask-framework-logo-svg.png">
+                        </div>
+                    </div>    
+                </div>
+
+
+                <div class="row">
+                    <div class="row">
+                        <div class="column" style="width: 100%;">
+                            <h4>Web</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="column" style="width: 33.3%;">
+                            <!-- <p>HTML</p> -->
+                            <img style="width:80px; padding-left: inherit;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/768px-HTML5_logo_and_wordmark.svg.png">
+                        </div>
+                        <div class="column" style="width: 33.3%;">
+                            <!-- <p>CSS</p> -->
+                            <img style="width:80px; padding-left: inherit;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png">
+                        </div>
+                    <!-- </div>
+                    <div class="row"> -->
+                        <div class="column" style="width: 33.3%;">
+                            <!-- <p>JavaScript</p> -->
+                            <img style="width:80px; padding-left: inherit;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Javascript_badge.svg/946px-Javascript_badge.svg.png">
+                        </div>
+                    </div>    
+                </div>
+            
+                <div class="row">
+                    <div class="row">
+                        <div class="column" style="width: 30%;">
+                            <h4>IDE</h4>
+                        </div>
+                        <div class="column" style="width: 70%;">
+                            <h4>Despliegue</h4>
+                        </div>
+                    </div>
+                    <!-- <h4>IDE y Despliegue</h4> -->
+                    <div class="column" style="width: 33.3%;">
+                        <p>Visual Studio Code</p>
+                        <img style="width:80px; padding-left: inherit;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png">
+                    </div>
+                    <div class="column" style="width: 33.3%;">
+                        <p>GitHub</p>
+                        <img style="width:80px; padding-left: inherit;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png">
+                    </div>
+                    <div class="column" style="width: 33.3%;">
+                        <p>Heroku</p>
+                        <img style="width:80px; padding-left: inherit;" src="https://cdn-icons-png.flaticon.com/512/873/873120.png">
+                    </div>
+                    
+                </div>
+            
+        </section>
+        
+        <section>
+            <h3>INTEGRANTES</h3>
+            <h4>Elaborado por el Grupo 03:</h4>
+                <ul style="padding-left: revert;">
+                    <li>Curay Chacón, Piero Yahir</li>
+                    <li>Gomez Carrasco, Gustavo Alessandro</li>
+                    <li>Huancas Cuicapuza, André Eduardo Adair </li>
+                    <li>Valle Romero, Javier Eduardo </li>
+                    <li>Wan Zhu, Hua Long Javier </li>
+                    <li>Yalle Muñóz, Edgar Saúl Junior </li>
+                </ul>
+            <br>
+
+            <h4>DOCENTE:</h4>
+                <ul style="padding-left: revert;">
+                    <li>Maquen Niño, Gisella Luisa Elena</li>
+                </ul>
+
+            
+        </section>
+    </main>
+</body>
+</html>

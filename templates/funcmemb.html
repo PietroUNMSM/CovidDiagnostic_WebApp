@@ -25,7 +25,10 @@
                         <a class="" href="/funcmemb.html" >Funciones de Membresia</a>
                     </li>
                     <li class="nav-item">
-                        <a class="" href="http://fontenele.github.io/bootstrap-navbar-dropdowns/" target="_blank">Github</a>
+                        <a class="" href="/info.html" >Sobre el proyecto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="" href="https://github.com/PietroUNMSM/CovidDiagnostic_WebApp" target="_blank">Github</a>
                     </li>
                 </ul>
         </div>
@@ -35,7 +38,7 @@
     <main class="main2">
         <div>
            <h3>Funciones de Membresía</h3>
-            <h9>Galería de los plots de las funciones de membresías de los () variables de entrada y la variable de salida del presente proyecto.</h4> 
+            <h9>Galería de los plots de las funciones de membresías de las nueve (9) variables de entrada y la variable de salida del presente proyecto.</h4> 
         </div>
         <div class="funciones">
             <div class="responsive">
@@ -43,10 +46,19 @@
                     <a target="_blank" href="Imagenes/FuncionesMembresia/plotFiebre.png"> 
                     <img src="Imagenes/FuncionesMembresia/plotFiebre.png" alt="Funciones de Membresia de Fiebre" width="500" height="300">
                     </a> 
-                    <div class="desc">Síntoma de Fiebre</div>
+                    <div class="desc"><b>Síntoma de Fiebre</b></div>
                 </div>
                 <div class="gallery-info">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et officia qui laboriosam quis asperiores debitis totam nam, numquam ipsum est modi reiciendis aliquam itaque laborum deleniti deserunt. Omnis, et tenetur.</p>
+                    <p>
+                        Se consideraron tres funciones de membresia triangular de acuerdo a la temperatura corporal del usuario en el rango de 36 a 40 °C. 
+                        <br> Se establecieron los siguientes rangos lingüisticos en Python:
+                        <ul style="padding-left: revert;">
+                            <li>Fiebre baja: [35.3, 36.7, 38]</li>
+                            <li>Fiebre media: [37, 38.3, 39.67]</li>
+                            <li>Fiebre alta: [38.67, 40, 41.3]</li>
+                        </ul>
+                    </p>
+                    
                 </div>
             </div>
             <div class="responsive">
@@ -54,10 +66,18 @@
                     <a target="_blank" href="Imagenes/FuncionesMembresia/plotEdad.png">
                     <img src="Imagenes/FuncionesMembresia/plotEdad.png" alt="Funciones de Membresia de Edad" width="500" height="300">
                     </a>
-                    <div class="desc">Rango de Edades</div>
+                    <div class="desc"><b>Rango de Edades</b></div>
                 </div>
                 <div class="gallery-info">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et officia qui laboriosam quis asperiores debitis totam nam, numquam ipsum est modi reiciendis aliquam itaque laborum deleniti deserunt. Omnis, et tenetur.</p>
+                    <p>
+                        Se consideraron tres funciones de membresia triangular de acuerdo a la edad usuario. 
+                        <br> Se establecieron los siguientes rangos lingüisticos en Python:
+                        <ul style="padding-left: revert;">
+                            <li>Edad menor a 40 años: [-14, 10, 34]</li>
+                            <li>Edad entre 40 a 50 años: [16, 40, 64]</li>
+                            <li>Edad mayor a 50 años: [46, 70, 94]</li>
+                        </ul>
+                    </p>
                 </div>
             </div>
             <div class="responsive">
@@ -65,10 +85,18 @@
                     <a target="_blank" href="Imagenes/FuncionesMembresia/plotDiabetes.png">
                         <img src="Imagenes/FuncionesMembresia/plotDiabetes.png" alt="Funciones de Membresia de Diabetes" width="500" height="300">
                         </a>
-                        <div class="desc">Diabetes - Niveles de glucosa en la sangre</div>
+                        <div class="desc"><b>Diabetes - Niveles de glucosa en la sangre</b></div>
                 </div>
                 <div class="gallery-info">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et officia qui laboriosam quis asperiores debitis totam nam, numquam ipsum est modi reiciendis aliquam itaque laborum deleniti deserunt. Omnis, et tenetur.</p>
+                    <p>
+                        Se consideraron tres funciones de membresia triangular de acuerdo a la cantidad de glucosa en la sangre (mg/dl) del usuario para determinar su nivel de diabetes. 
+                        <br> Se establecieron los siguientes rangos lingüisticos en Python:
+                        <ul style="padding-left: revert;">
+                            <li>Nivel bajo o normal: [110, 140, 170]</li>
+                            <li>Nivel medio o pre diabetes: [147.5, 177.5, 207.5]</li>
+                            <li>Nivel alto o diabetes: [185, 215, 245]</li>
+                        </ul>
+                    </p>
                 </div>
             </div>
             <div class="responsive">
@@ -76,10 +104,18 @@
                     <a target="_blank" href="Imagenes/FuncionesMembresia/plotHistV.png">
                         <img src="Imagenes/FuncionesMembresia/plotHistV.png" alt="Funciones de Membresia de Historial de Viajes" width="500" height="300">
                         </a>
-                        <div class="desc">Historial de Viajes referido al contacto con algún infectado</div>
+                        <div class="desc"><b>Contacto con algún infectado</b></div>
                 </div>
                 <div class="gallery-info">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et officia qui laboriosam quis asperiores debitis totam nam, numquam ipsum est modi reiciendis aliquam itaque laborum deleniti deserunt. Omnis, et tenetur.</p>
+                    <p>
+                        Se consideraron tres funciones de membresia triangular de acuerdo al contacto que tuvo el usuario con alguien infectado. 
+                        <br> Se establecieron los siguientes rangos lingüisticos en Python:
+                        <ul style="padding-left: revert;">
+                            <li>Con ningun infectado: [-0.4, 0, 0.4]</li>
+                            <li>Duda de contacto con algún infectado: [0.1, 0.5, 0.9]</li>
+                            <li>Sí tuvo contacto con alguien infectado: [0.6, 1, 1.4]</li>
+                        </ul>
+                    </p>
                 </div>
             </div>
             <div class="responsive">
@@ -87,10 +123,18 @@
                     <a target="_blank" href="Imagenes/FuncionesMembresia/plotGarganta.png">
                         <img src="Imagenes/FuncionesMembresia/plotGarganta.png" alt="Funciones de Membresia de dolor de garganta" width="500" height="300">
                         </a>
-                        <div class="desc">Dolor de garganta</div>
+                        <div class="desc"><b>Dolor de garganta</b></div>
                 </div>
                 <div class="gallery-info">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et officia qui laboriosam quis asperiores debitis totam nam, numquam ipsum est modi reiciendis aliquam itaque laborum deleniti deserunt. Omnis, et tenetur.</p>
+                    <p>
+                        Se consideraron tres funciones de membresia triangular respecto al grado de dolor de garganta que presenta el usuario entre 0 a 1. 
+                        <br> Se establecieron los siguientes rangos lingüisticos en Python:
+                        <ul style="padding-left: revert;">
+                            <li>Dolor bajo de garganta: [-0.4, 0, 0.4]</li>
+                            <li>Dolor medio de garganta: [0.1, 0.5, 0.9]</li>
+                            <li>Dolor alto de garganta: [0.6, 1, 1.4]</li>
+                        </ul>
+                    </p>
                 </div>
             </div>
             
@@ -99,10 +143,18 @@
                     <a target="_blank" href="Imagenes/FuncionesMembresia/plotTos.png">
                         <img src="Imagenes/FuncionesMembresia/plotTos.png" alt="Funciones de Membresia de Tos" width="500" height="300">
                         </a>
-                        <div class="desc">Grado de Tos</div>
+                        <div class="desc"><b>Grado de Tos</b></div>
                 </div>
                 <div class="gallery-info">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et officia qui laboriosam quis asperiores debitis totam nam, numquam ipsum est modi reiciendis aliquam itaque laborum deleniti deserunt. Omnis, et tenetur.</p>
+                    <p>
+                        Se consideraron tres funciones de membresia triangular respecto al grado de tos que presenta el usuario entre 0 a 1. 
+                        <br> Se establecieron los siguientes rangos lingüisticos en Python:
+                        <ul style="padding-left: revert;">
+                            <li>Grado bajo de tos: [-0.4, 0, 0.4]</li>
+                            <li>Grado medio de tos: [0.1, 0.5, 0.9]</li>
+                            <li>Grado alto de tos: [0.6, 1, 1.4]</li>
+                        </ul>
+                    </p>
                 </div>
             </div>
             <div class="responsive">
@@ -110,10 +162,18 @@
                     <a target="_blank" href="Imagenes/FuncionesMembresia/plotPerdida.png">
                         <img src="Imagenes/FuncionesMembresia/plotPerdida.png" alt="Funciones de Membresia de Pérdida de Olfato y/o Gusto" width="500" height="300">
                         </a>
-                        <div class="desc">Pérdida de los sentidos de olfato y gusto</div>
+                        <div class="desc"><b>Pérdida de los sentidos de olfato y gusto</b></div>
                 </div>
                 <div class="gallery-info">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et officia qui laboriosam quis asperiores debitis totam nam, numquam ipsum est modi reiciendis aliquam itaque laborum deleniti deserunt. Omnis, et tenetur.</p>
+                    <p>
+                        Se consideraron tres funciones de membresia triangular respecto al grado de pérdida de los sentidos de olfato y/o gusto que presenta el usuario entre 0 a 1. 
+                        <br> Se establecieron los siguientes rangos lingüisticos en Python:
+                        <ul style="padding-left: revert;">
+                            <li>Pérdida baja o leve del olfato y/o gusto: [-0.4, 0, 0.4]</li>
+                            <li>Pérdida media del olfato y/o gusto: [0.1, 0.5, 0.9]</li>
+                            <li>Pérdida alta o total del olfato y/o gusto: [0.6, 1, 1.4]</li>
+                        </ul>
+                    </p>
                 </div>
             </div>
             <div class="responsive">
@@ -121,10 +181,18 @@
                     <a target="_blank" href="Imagenes/FuncionesMembresia/plotRespira.png">
                         <img src="Imagenes/FuncionesMembresia/plotRespira.png" alt="Funciones de Membresia de Problemas Respiratorios" width="500" height="300">
                         </a>
-                        <div class="desc">Problemas Respiratorios</div>
+                        <div class="desc"><b>Problemas Respiratorios</b></div>
                 </div>
                 <div class="gallery-info">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et officia qui laboriosam quis asperiores debitis totam nam, numquam ipsum est modi reiciendis aliquam itaque laborum deleniti deserunt. Omnis, et tenetur.</p>
+                    <p>
+                        Se consideraron tres funciones de membresia triangular respecto al grado de problemas respiratorios que presenta el usuario entre 0 a 1. 
+                        <br> Se establecieron los siguientes rangos lingüisticos en Python:
+                        <ul style="padding-left: revert;">
+                            <li>Problemas respiratorios bajos: [-0.4, 0, 0.4]</li>
+                            <li>Problemas respiratorios medios: [0.1, 0.5, 0.9]</li>
+                            <li>Problemas respiratorios altos: [0.6, 1, 1.4]</li>
+                        </ul>
+                    </p>
                 </div>
             </div>
             <div class="responsive">
@@ -132,23 +200,39 @@
                     <a target="_blank" href="Imagenes/FuncionesMembresia/plotPecho.png">
                         <img src="Imagenes/FuncionesMembresia/plotPecho.png" alt="Funciones de Membresia de Dolor en el pecho" width="500" height="300">
                         </a>
-                        <div class="desc">Dolor en el pecho</div>
+                        <div class="desc"><b>Dolor en el pecho</b></div>
                 </div>
                 <div class="gallery-info">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et officia qui laboriosam quis asperiores debitis totam nam, numquam ipsum est modi reiciendis aliquam itaque laborum deleniti deserunt. Omnis, et tenetur.</p>
+                    <p>
+                        Se consideraron tres funciones de membresia triangular respecto al grado de dolor en el pecho que presenta el usuario entre 0 a 1. 
+                        <br> Se establecieron los siguientes rangos lingüisticos en Python:
+                        <ul style="padding-left: revert;">
+                            <li>Dolor bajo en el pecho: [-4, 0, 4]</li>
+                            <li>Dolor medio en el pecho: [1, 5, 9]</li>
+                            <li>Dolor alto en el pecho: [6, 10, 14]</li>
+                        </ul>
+                    </p>
                 </div>
             </div>
         </div>
-        <h2 class="con-title">Conclusion</h2>
+        <h2 class="con-title"><b>Conclusion</b></h2>
         <div class="responsive-conclusion">
-            <div class="gallery">
+            <div class="gallery" style="margin-left: auto; margin-right: auto;">
                 <a target="_blank" href="Imagenes/FuncionesMembresia/plotConclu.png">
                     <img src="Imagenes/FuncionesMembresia/plotConclu.png" alt="Funciones de Membresia de Conclusion" width="500" height="300">
                     </a>
-                    <div class="desc">Conclusion del diagnóstico</div>
+                    <div class="desc"><b>Conclusion del diagnóstico</b></div>
             </div>
             <div class="gallery-info">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et officia qui laboriosam quis asperiores debitis totam nam, numquam ipsum est modi reiciendis aliquam itaque laborum deleniti deserunt. Omnis, et tenetur.</p>
+                <p>
+                    Se consideraron tres funciones de membresia triangular respecto al resultado del diagnóstico del usuario entre 0 y 1. 
+                    <br> Se establecieron los siguientes rangos lingüisticos en Python:
+                    <ul style="padding-left: revert;">
+                        <li>Caso negativo: [-0.4, 0, 0.4]</li>
+                        <li>Cuarentena como recomendación: [0.1, 0.5, 0.9]</li>
+                        <li>Caso positivo: [0.6, 1.0, 1.4]</li>
+                    </ul>
+                </p>
             </div>
         </div>
     </main>
